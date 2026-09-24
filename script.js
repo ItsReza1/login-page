@@ -34,6 +34,9 @@ function init() {
     // Tömmmer inmatningsfälten så att de är tom för nästa inloggning
     document.getElementById("användarenamn").value = "";
     document.getElementById("lösenord").value = "";
+
+    // Rensar minne när man blir helt utloggad
+    localStorage.removeItem("sparadAnvändare");
   });
 }
 
@@ -51,6 +54,11 @@ function formDate() {
 
     // Knappen ska visas efter man lyckads logga in
     document.getElementById("loggaUtKnapp").style.display = "block";
+
+    // Lockstorge är som anteckningsblock inuti webbläsae
+    // vi sparar användaren i webbläsaren när den lyckads logga in
+    localStorage.setItem("sparadAnvändare", inmatatNamn);
+    // itemset metoden. Tar emot två värden. nyckel och själva vädet som är Kalle
   } else {
     document.getElementById("utskrift").innerText =
       "Felaktiga inloggningsuppgifter";
