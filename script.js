@@ -27,9 +27,11 @@ function formDate() {
   let inmatatLösenord = document.getElementById("lösenord").value;
 
   if (inmatatNamn === rättNamn && inmatatLösenord === rättLösenord) {
-    console.log("Välkommen " + inmatatNamn + " du är nu inloggad ");
+    document.getElementById("utskrift").innerText =
+      "Väkommen " + inmatatNamn + " du är nu inloggad";
   } else {
-    console.log("Felaktiga inloggningsuppgifter");
+    document.getElementById("utskrift").innerText =
+      "Felaktiga inloggningsuppgifter";
   }
 
   console.log("Inskrivit namn " + inmatatNamn);
