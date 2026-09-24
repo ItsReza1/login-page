@@ -18,6 +18,8 @@ function init() {
     // Anropar functionen som ska hantera inmatningen
     formDate();
   });
+
+  //   Vi skapar knappen som ska logga ut oss när man trycker på logga ut
 }
 
 // Vi skapar en funktion för att hantera inmatningen
@@ -29,6 +31,11 @@ function formDate() {
   if (inmatatNamn === rättNamn && inmatatLösenord === rättLösenord) {
     document.getElementById("utskrift").innerText =
       "Väkommen " + inmatatNamn + " du är nu inloggad";
+
+    document.querySelector("form").style.display = "none";
+
+    // Knappen ska visas efter man lyckads logga in
+    document.getElementById("loggutKnapp").style.display = "block";
   } else {
     document.getElementById("utskrift").innerText =
       "Felaktiga inloggningsuppgifter";

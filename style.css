@@ -21,3 +21,6 @@ input {
   box-sizing: border-box;
   margin-bottom: 1rem;
 }
+#loggutKnapp {
+  display: none;
+}
