@@ -20,6 +20,21 @@ function init() {
   });
 
   //   Vi skapar knappen som ska logga ut oss när man trycker på logga ut
+  let loggaUtKnapp = document.getElementById("loggaUtKnapp");
+
+  //   1. Visar formuläret igen
+  loggaUtKnapp.addEventListener("click", () => {
+    document.querySelector("form").style.display = "block";
+    // 2 vi döljer logga ut  knappen
+    document.getElementById("loggaUtKnapp").style.display = "none";
+
+    // 3. vi tömer Välkomstmeddelandet
+    document.getElementById("utskrift").innerText = "";
+
+    // Tömmmer inmatningsfälten så att de är tom för nästa inloggning
+    document.getElementById("användarenamn").value = "";
+    document.getElementById("lösenord").value = "";
+  });
 }
 
 // Vi skapar en funktion för att hantera inmatningen
@@ -35,7 +50,7 @@ function formDate() {
     document.querySelector("form").style.display = "none";
 
     // Knappen ska visas efter man lyckads logga in
-    document.getElementById("loggutKnapp").style.display = "block";
+    document.getElementById("loggaUtKnapp").style.display = "block";
   } else {
     document.getElementById("utskrift").innerText =
       "Felaktiga inloggningsuppgifter";
